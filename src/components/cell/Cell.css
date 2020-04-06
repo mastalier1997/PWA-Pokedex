@@ -1,0 +1,15 @@
+.Cell {
+    background: white;
+    border-radius: 10px;
+}
+
+.Cell_img {
+    text-align: center;
+}
+
+
+.Cell_name {
+    text-align: center;
+    text-transform: capitalize;
+    font-weight: 800;
+}
