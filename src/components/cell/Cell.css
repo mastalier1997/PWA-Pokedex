@@ -13,3 +13,9 @@
     text-transform: capitalize;
     font-weight: 800;
 }
+
+a {
+    text-decoration: none;
+    text-underline: none;
+    color: black;
+}

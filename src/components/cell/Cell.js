@@ -3,6 +3,7 @@ import './Cell.css';
 
 function Cell({ pokemon }) {
     return (
+        <a href={"Detail.js"}>
         <div className="Cell">
             <div className="Cell_img">
                 <img src={pokemon.sprites.front_default} alt="" />
@@ -11,6 +12,7 @@ function Cell({ pokemon }) {
                 {pokemon.name}
             </div>
         </div>
+        </a>
     );
 }
 
