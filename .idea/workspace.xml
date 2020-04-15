@@ -2,17 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cf1c93bd-8fc9-4fe3-8e59-0103b384ae8c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/assets/pokemon_2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/navbar/navbar.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/navbar/navbar.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/45656.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/Herunterladen.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/cell/Cell.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/cell/Cell.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +81,8 @@
       <workItem from="1586170730184" duration="4253000" />
       <workItem from="1586350267211" duration="4495000" />
       <workItem from="1586895452965" duration="158000" />
-      <workItem from="1586933658743" duration="3499000" />
+      <workItem from="1586933658743" duration="4285000" />
+      <workItem from="1586957508509" duration="254000" />
     </task>
     <task id="LOCAL-00001" summary="new">
       <created>1586170927239</created>
@@ -127,7 +119,14 @@
       <option name="project" value="LOCAL" />
       <updated>1586895598660</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Update design">
+      <created>1586937344823</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1586937344823</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -137,7 +136,8 @@
     <MESSAGE value="new" />
     <MESSAGE value="Detail Seite, Div button" />
     <MESSAGE value="Background first version" />
-    <option name="LAST_COMMIT_MESSAGE" value="Background first version" />
+    <MESSAGE value="Update design" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update design" />
   </component>
   <component name="WindowStateProjectService">
     <state x="964" y="391" key="#Notifications" timestamp="1586171037126">
@@ -148,45 +148,45 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1417" y="499" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1586880032620" />
-    <state x="997" y="327" key="CommitChangelistDialog2" timestamp="1586895597466">
+    <state x="997" y="327" key="CommitChangelistDialog2" timestamp="1586937342264">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="748" y="229" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1280.984@0.0.1920.1040" timestamp="1586359277003" />
     <state x="2419" y="173" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1280.984@1920.0.1280.984" timestamp="1586790872217" />
-    <state x="997" y="327" key="CommitChangelistDialog2/0.0.2560.1400@0.0.2560.1400" timestamp="1586895597466" />
-    <state width="1362" height="287" key="GridCell.Tab.0.bottom" timestamp="1586895612667">
+    <state x="997" y="327" key="CommitChangelistDialog2/0.0.2560.1400@0.0.2560.1400" timestamp="1586937342264" />
+    <state width="1362" height="287" key="GridCell.Tab.0.bottom" timestamp="1586939633099">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1899" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1280.984@0.0.1920.1040" timestamp="1586359235580" />
     <state width="1259" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1280.984@1920.0.1280.984" timestamp="1586362260844" />
-    <state width="1362" height="287" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1586895612667" />
-    <state width="1362" height="287" key="GridCell.Tab.0.center" timestamp="1586895612667">
+    <state width="1362" height="287" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1586939633099" />
+    <state width="1362" height="287" key="GridCell.Tab.0.center" timestamp="1586939633099">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1899" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1280.984@0.0.1920.1040" timestamp="1586359235580" />
     <state width="1259" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1280.984@1920.0.1280.984" timestamp="1586362260844" />
-    <state width="1362" height="287" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1586895612667" />
-    <state width="1362" height="287" key="GridCell.Tab.0.left" timestamp="1586895612666">
+    <state width="1362" height="287" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1586939633099" />
+    <state width="1362" height="287" key="GridCell.Tab.0.left" timestamp="1586939633099">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1899" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1280.984@0.0.1920.1040" timestamp="1586359235580" />
     <state width="1259" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1280.984@1920.0.1280.984" timestamp="1586362260844" />
-    <state width="1362" height="287" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1586895612666" />
-    <state width="1362" height="287" key="GridCell.Tab.0.right" timestamp="1586895612667">
+    <state width="1362" height="287" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1586939633099" />
+    <state width="1362" height="287" key="GridCell.Tab.0.right" timestamp="1586939633099">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1899" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1280.984@0.0.1920.1040" timestamp="1586359235580" />
     <state width="1259" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1280.984@1920.0.1280.984" timestamp="1586362260844" />
-    <state width="1362" height="287" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1586895612667" />
+    <state width="1362" height="287" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1586939633099" />
     <state x="873" y="375" key="SettingsEditor" timestamp="1586170980298">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="873" y="375" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1586170980298" />
-    <state x="964" y="466" key="Vcs.Push.Dialog.v2" timestamp="1586895600432">
+    <state x="964" y="466" key="Vcs.Push.Dialog.v2" timestamp="1586937347355">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="723" y="346" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1280.984@0.0.1920.1040" timestamp="1586359281556" />
-    <state x="964" y="466" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1586895600432" />
+    <state x="964" y="466" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1586937347355" />
     <state x="2369" y="409" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1586790877322">
       <screen x="1920" y="0" width="1280" height="984" />
     </state>

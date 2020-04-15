@@ -1,7 +1,8 @@
 .Cell {
     background: #f2f2f2;
-    border-radius: 50%;
+    border-radius: 10px;
     width: 300px;
+    opacity: 0.9;
 }
 
 .Cell_img {
