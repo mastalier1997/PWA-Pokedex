@@ -1,6 +1,7 @@
 .Cell {
-    background: white;
-    border-radius: 10px;
+    background: #f2f2f2;
+    border-radius: 50%;
+    width: 300px;
 }
 
 .Cell_img {
@@ -12,6 +13,9 @@
     text-align: center;
     text-transform: capitalize;
     font-weight: 800;
+    padding-bottom: 5px;
+    font-family: "Courier New";
+    font-weight: bolder;
 }
 
 a {

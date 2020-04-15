@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Cell from './components/cell/Cell_Exp';
 import { getPokemon, getAllPokemon } from './data/data';
 import './App.css';
+import Navbar from "./components/navbar/navbar";
 
 function App() {
   const [pokemonData, setPokemonData] = useState([])
@@ -27,7 +28,9 @@ function App() {
   }
 
   return (
-      <div>
+      <>
+        <Navbar/>
+        <div>
         {loading ? <h1 style={{ textAlign: 'center' }}>Loading...</h1> : (
           <>
             <div className="grid-container">
@@ -37,7 +40,8 @@ function App() {
             </div>
           </>
         )}
-      </div>
+        </div>
+      </>
   );
 }
 
