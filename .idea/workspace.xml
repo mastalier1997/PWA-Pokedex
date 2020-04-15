@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cf1c93bd-8fc9-4fe3-8e59-0103b384ae8c" name="Default Changelist" comment="">
+    <list default="true" id="cf1c93bd-8fc9-4fe3-8e59-0103b384ae8c" name="Default Changelist" comment="Update design">
+      <change afterPath="$PROJECT_DIR$/src/Detail.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/cell/Cell.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/cell/Cell.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Detail.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Detail.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/cell/Cell.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/cell/Cell.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,15 +46,15 @@
     <property name="settings.editor.selected.configurable" value="settings.github" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Mahsum\WebstormProjects\PWA-CE\src" />
-      <recent name="C:\Users\janma\WebstormProjects\pwa-ce" />
-      <recent name="C:\Users\janma\WebstormProjects\pwa-ce\src" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\websorms\pwa-ce\src\assets" />
       <recent name="C:\Users\Mahsum\WebstormProjects\PWA-CE\src" />
       <recent name="C:\Users\Mahsum\WebstormProjects\PWA-CE\src\components" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Mahsum\WebstormProjects\PWA-CE\src" />
+      <recent name="C:\Users\janma\WebstormProjects\pwa-ce" />
+      <recent name="C:\Users\janma\WebstormProjects\pwa-ce\src" />
     </key>
   </component>
   <component name="RunManager" selected="npm.npm start">
@@ -148,34 +152,34 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1417" y="499" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1586880032620" />
-    <state x="997" y="327" key="CommitChangelistDialog2" timestamp="1586937342264">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state x="748" y="229" key="CommitChangelistDialog2" timestamp="1586960663115">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="748" y="229" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1280.984@0.0.1920.1040" timestamp="1586359277003" />
+    <state x="748" y="229" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1280.984@0.0.1920.1040" timestamp="1586960663115" />
     <state x="2419" y="173" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1280.984@1920.0.1280.984" timestamp="1586790872217" />
     <state x="997" y="327" key="CommitChangelistDialog2/0.0.2560.1400@0.0.2560.1400" timestamp="1586937342264" />
-    <state width="1362" height="287" key="GridCell.Tab.0.bottom" timestamp="1586939633099">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="1899" height="301" key="GridCell.Tab.0.bottom" timestamp="1586968217881">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1280.984@0.0.1920.1040" timestamp="1586359235580" />
+    <state width="1899" height="301" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1280.984@0.0.1920.1040" timestamp="1586968217881" />
     <state width="1259" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1280.984@1920.0.1280.984" timestamp="1586362260844" />
     <state width="1362" height="287" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1586939633099" />
-    <state width="1362" height="287" key="GridCell.Tab.0.center" timestamp="1586939633099">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="1899" height="301" key="GridCell.Tab.0.center" timestamp="1586968217881">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1280.984@0.0.1920.1040" timestamp="1586359235580" />
+    <state width="1899" height="301" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1280.984@0.0.1920.1040" timestamp="1586968217881" />
     <state width="1259" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1280.984@1920.0.1280.984" timestamp="1586362260844" />
     <state width="1362" height="287" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1586939633099" />
-    <state width="1362" height="287" key="GridCell.Tab.0.left" timestamp="1586939633099">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="1899" height="301" key="GridCell.Tab.0.left" timestamp="1586968217881">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1280.984@0.0.1920.1040" timestamp="1586359235580" />
+    <state width="1899" height="301" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1280.984@0.0.1920.1040" timestamp="1586968217881" />
     <state width="1259" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1280.984@1920.0.1280.984" timestamp="1586362260844" />
     <state width="1362" height="287" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1586939633099" />
-    <state width="1362" height="287" key="GridCell.Tab.0.right" timestamp="1586939633099">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="1899" height="301" key="GridCell.Tab.0.right" timestamp="1586968217881">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1280.984@0.0.1920.1040" timestamp="1586359235580" />
+    <state width="1899" height="301" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1280.984@0.0.1920.1040" timestamp="1586968217881" />
     <state width="1259" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1280.984@1920.0.1280.984" timestamp="1586362260844" />
     <state width="1362" height="287" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1586939633099" />
     <state x="873" y="375" key="SettingsEditor" timestamp="1586170980298">
