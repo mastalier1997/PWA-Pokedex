@@ -4,6 +4,7 @@ import { getPokemon, getAllPokemon } from './data/data';
 import './App.css';
 import Navbar from "./components/navbar/navbar";
 
+
 function App() {
   const [pokemonData, setPokemonData] = useState([])
   const [loading, setLoading] = useState(true);
