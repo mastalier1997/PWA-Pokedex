@@ -1,19 +1,17 @@
 import React from 'react';
 import './navbar.css';
-import {Button, Form, FormControl} from "react-bootstrap";
+import {Button, Form, FormControl, Nav, NavDropdown} from "react-bootstrap";
+
 
 function Navbar() {
     return (
-        <div className="Navbar">
-            <h2>Pokémon PWA</h2>
-            <div className="Search">
-                <Form inline>
-                    <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-                    <Button variant="outline-info">Search</Button>
-                </Form>
+        <form className={"form-inline"}>
+            <label>Pokémon PWA</label>
+            <div className={"search-nav"}>
+                <input type={"text"} placeholder={"Search"}/>
+                <Button>Search</Button>
             </div>
-
-        </div>
+        </form>
     );
 }
 

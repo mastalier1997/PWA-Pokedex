@@ -1,13 +1,54 @@
-.Navbar {
-    padding: 20px;
+.form-inline {
+    display: block;
+    flex-flow: row wrap;
+    align-items: center;
     background: #fd3030;
-    color: white;
-    margin-bottom: 50px;
-    text-align: center;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.form-inline label {
     font-size: 30px;
+    font-family: "Courier New";
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+    text-align: center;
+    display: inline-block;
+}
+
+.search-nav{
+    display: inline-block;
+    float: right;
+
+}
+
+
+.form-inline input {
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
     font-family: "Courier New";
 }
 
-.Search{
+.form-inline Button{
+    margin-left: 5px;
+}
 
+.color-nav{
+    background: #fd3030;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.nav-name{
+    color: white;
+    font-family: "Courier New";
+}
+
+.nav-form-button{
+    float: right;
+}
+.nav-form-filed{
+    float: right;
 }
