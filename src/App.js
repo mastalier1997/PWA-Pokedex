@@ -6,38 +6,65 @@ import Navbar from "./components/navbar/navbar";
 
 
 function App() {
-  const [pokemonData, setPokemonData] = useState([])
+  const [pokemonData, setPokemonData] = useState([]);
   const [loading, setLoading] = useState(true);
-  const initialURL = 'https://pokeapi.co/api/v2/pokemon?limit=151'
+  const initialURL = 'https://pokeapi.co/api/v2/pokemon?limit=50';
+  const [prevURL, setPrevURL] = useState('');
+  const [nextURL, setNextURL] = useState('');
 
   useEffect(() => {
     async function fetchData() {
-      let response = await getAllPokemon(initialURL)
+      let response = await getAllPokemon(initialURL);
+      setNextURL(response.next);
+      setPrevURL(response.previous);
       await loadPokemon(response.results);
       setLoading(false);
     }
     fetchData();
-  }, [])
+  }, []);
 
 
   const loadPokemon = async (data) => {
     let _pokemonData = await Promise.all(data.map(async pokemon => {
       let pokemonRecord = await getPokemon(pokemon)
       return pokemonRecord
-    }))
+    }));
     setPokemonData(_pokemonData);
-  }
+  };
+
+  const next = async () => {
+    setLoading(true);
+    let data = await getAllPokemon(nextURL);
+    await loadPokemon(data.results);
+    setNextURL(data.next);
+    setPrevURL(data.previous);
+    setLoading(false);
+  };
+
+  const prev = async () => {
+    if (!prevURL) return;
+    setLoading(true);
+    let data = await getAllPokemon(prevURL);
+    await loadPokemon(data.results);
+    setNextURL(data.next);
+    setPrevURL(data.previous);
+    setLoading(false);
+  };
 
   return (
       <>
         <Navbar/>
         <div>
-        {loading ? <h1 style={{ textAlign: 'center' }}>Loading...</h1> : (
+        {loading ? <h1 style={{ textAlign: 'center', color: 'white'}}>Loading...</h1> : (
           <>
             <div className="grid-container">
               {pokemonData.map((pokemon, i) => {
                 return <Cell key={i} pokemon={pokemon} />
               })}
+            </div>
+            <div className="btn-field">
+              <button className={"btn-l"} onClick={prev}>←</button>
+              <button className={"btn-r"} onClick={next}>→</button>
             </div>
           </>
         )}
