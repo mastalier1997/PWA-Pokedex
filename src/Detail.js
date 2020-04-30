@@ -1,20 +1,18 @@
 import React, {useState} from 'react';
 import './Detail.css';
+import {ClassDeclaration as pokemon} from "@babel/types";
 
 const queryString = window.location.search;
 console.log(queryString);
 const urlParams = new URLSearchParams(queryString);
 const id = urlParams.get('id');
-Detail(id)
 
-function Detail(pokemon) {
+function Detail({pokemon}) {
     return (
             <div className="Detail">
                 <div className="Detail_img">
-                    <p>TEST</p>
                 </div>
                 <div className="Detail_name">
-                    {pokemon.name}
                 </div>
             </div>
     );
