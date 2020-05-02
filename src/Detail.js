@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import './Detail.css';
 import {ClassDeclaration as pokemon} from "@babel/types";
+import Card from "./Card";
 
 
 const queryString = window.location.search;
@@ -32,6 +33,12 @@ function Detail(props) {
             <div className="Detail_name">
                 {pokemon.name}
             </div>
+            <div className="Detail_type">
+                <Card
+                    types={pokemon.types}
+                />
+            </div>
+
         </div>
     );
 }
