@@ -4,11 +4,6 @@ import {ClassDeclaration as pokemon} from "@babel/types";
 import Card from "./Card";
 
 
-const queryString = window.location.search;
-console.log(queryString);
-const urlParams = new URLSearchParams(queryString);
-const id = urlParams.get('id');
-
 function Detail(props) {
     const [isLoading, setIsLoading] = useState(true);
     const [pokemon, setPokemon] = useState(null);
@@ -25,21 +20,29 @@ function Detail(props) {
     })
 
     if (isLoading) return <p>Loading</p>
+
     return (
-        <div className="Detail">
-            <div className="Detail_img">
-                <img src={pokemon.sprites.front_default} alt="" />
-            </div>
-            <div className="Detail_name">
-                {pokemon.name}
-            </div>
-            <div className="Detail_type">
-                <Card
-                    types={pokemon.types}
-                />
+        <>
+            <div className="parent">
+                <div className="div1">
+                    <img src={pokemon.sprites.front_default} width="500" height="500" alt="" />
+                </div>
+                <div className="div2">
+                  <p>#{pokemon.id}</p>
+                    {pokemon.name}
+                    <Card
+                        types={pokemon.types}
+                        height={pokemon.height}
+                        weight={pokemon.weight}
+                        abilities={pokemon.abilities}
+                    />
+
+
+
+                </div>
             </div>
 
-        </div>
+        </>
     );
 }
 

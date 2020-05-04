@@ -1,8 +1,65 @@
+.parent {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    background: #fd3030;
+}
 
-.Detail_img {
+.div1 {
+    grid-area: 1 / 2 / 4 / 5;
+    background: white;
     text-align: center;
-    max-width:500%;
-    max-height:500%;
+
+
+}
+.div1 img{
+    margin: 5em;
+    background: black;
+    text-align: center;
+
+}
+
+.div2 {
+    grid-area: 4 / 2 / 6 / 5;
+    background: lightgrey;
+    text-transform: capitalize;
+    font-weight: 900;
+    padding-top: 2em;
+    font-family: "Courier New";
+    font-weight: bolder;
+    font-size: 2em;
+}
+
+.Detail{
+    padding-top: 3%;
+    background: #fd3030;
+}
+.Detail_img {
+    max-width: 600px;
+    max-height: 600px;
+    text-align: center;
+    padding: 3%;
+    background: black;
+}
+
+.Detail_img img{
+    max-width: 200%;
+    max-height: 200%;
+    background: lightskyblue;
+}
+
+
+.Detail_id {
+    text-align: center;
+    text-transform: capitalize;
+    font-weight: 900;
+    padding-top: 2em;
+    font-family: "Courier New";
+    font-weight: bolder;
+    font-size: 2em;
+    color: white;
 }
 
 .Detail_name {
@@ -25,3 +82,4 @@
     font-size: 2em;
     color: white;
 }
+
