@@ -52,3 +52,19 @@
 .nav-form-filed{
     float: right;
 }
+
+@media screen and (max-width: 500px){
+    .form-inline{
+        display: block;
+        flex-flow: row wrap;
+        align-items: center;
+        background: #fd3030;
+        margin-bottom: 30px;
+        height: 120px;
+    }
+
+    .search-nav{
+        float: left;
+        padding-top: 15px;
+    }
+}

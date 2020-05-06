@@ -24,6 +24,8 @@
     border-style: none;
     margin-right: 10px;
     padding: 5px;
+    width: 40px;
+    height: 40px;
 }
 
 .btn-r {
@@ -31,4 +33,15 @@
     color: white;
     border-style: none;
     padding: 5px;
+    height: 40px;
+    width: 40px;
+}
+
+@media screen and (max-width: 1500px){
+
+    .btn-field{
+        margin-top: 25px;
+        margin-bottom: 15px;
+    }
+
 }
