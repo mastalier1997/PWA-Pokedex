@@ -1,85 +1,52 @@
 .parent {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(5, 1fr);
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(2, 1fr);
     grid-column-gap: 0px;
     grid-row-gap: 0px;
-    background: #fd3030;
 }
 
 .div1 {
-    grid-area: 1 / 2 / 4 / 5;
-    background: white;
+    grid-area: 1 / 2 / 2 / 6;
     text-align: center;
+    background-color: rgba(0, 0, 0, 0.7);
+}
 
+#bold_words{
+    font-weight: bold;
 
 }
 .div1 img{
     margin: 5em;
-    background: black;
     text-align: center;
-
+    background-color: rgba(128, 128, 128, 0.8);
+    border-radius: 300px;
 }
-
 .div2 {
-    grid-area: 4 / 2 / 6 / 5;
-    background: lightgrey;
+    grid-area: 4 / 2 /2 / 4;
+    background: white;
     text-transform: capitalize;
-    font-weight: 900;
+    font-weight: normal;
+    padding-top: 2em;
+    padding-left: 2em;
+    font-family: "Courier New";
+    font-size: larger;
+
+}
+
+.div3 {
+    grid-area: 4 / 4 / 2 / 6;
+    background: white;
+    text-transform: capitalize;
+    font-weight: normal;
     padding-top: 2em;
     font-family: "Courier New";
-    font-weight: bolder;
-    font-size: 2em;
-}
+    font-size: larger;
+    padding-left: 2em;
 
-.Detail{
-    padding-top: 3%;
-    background: #fd3030;
-}
-.Detail_img {
-    max-width: 600px;
-    max-height: 600px;
-    text-align: center;
-    padding: 3%;
-    background: black;
-}
-
-.Detail_img img{
-    max-width: 200%;
-    max-height: 200%;
-    background: lightskyblue;
 }
 
 
-.Detail_id {
-    text-align: center;
-    text-transform: capitalize;
-    font-weight: 900;
-    padding-top: 2em;
-    font-family: "Courier New";
-    font-weight: bolder;
-    font-size: 2em;
-    color: white;
+ul{
+    list-style-type: decimal;
 }
-
-.Detail_name {
-    text-align: center;
-    text-transform: capitalize;
-    font-weight: 900;
-    padding-top: 2em;
-    font-family: "Courier New";
-    font-weight: bolder;
-    font-size: 2em;
-    color: white;
-}
-.Detail_type {
-    text-align: center;
-    text-transform: capitalize;
-    font-weight: 900;
-    padding-top: 2em;
-    font-family: "Courier New";
-    font-weight: bolder;
-    font-size: 2em;
-    color: white;
-}
-

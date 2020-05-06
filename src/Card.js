@@ -2,42 +2,38 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './Detail.css';
 
-const Types = ({ types, height, weight, abilities}) => {
+const Types = ({ types, height, weight, abilities, flavor_text}) => {
     return (
         <div className="card">
 
             <footer className="card-footer">
+                <a id={"bold_words"}>Type: </a>
                 {types.map((item, index) =>
-                    <div className={types}>
-                    <span key={index}
-                          className={`card-footer-item is-uppercase ${item.type.name}`}>
-                        {item.type.name}
+                    <span key={index}>
+                        <a  style={{background: "rgba(0, 0, 0, 0.2)"}}>{item.type.name}</a> <a/>
                     </span>
-                    </div>
                 )}
-            </footer>
 
+            </footer>
             <div className="card">
-                <div className="card-header">
-                    <p className="card-header-title">
-                        Profil
-                    </p>
-                </div>
                 <div className="card-content">
                     <div className="columns">
                         <div className="column is-half">
-                            <p className="is-6 has-text-grey">Height: </p>
-                            <p>{height / 10} m</p>
-                            <p className="is-6 has-text-grey">Weight: </p>
-                            <p>{weight / 10} kg</p>
+                            <a id={"bold_words"}>Height: </a>
+                             {height / 10} m <br/>
+                            <a id={"bold_words"}>Weight: </a>
+                            {weight / 10} kg
                         </div>
-                        <div className="column is-half">
-                            <p className="is-6 has-text-grey">Abilities:</p>
-                            {abilities.map((abilities, index) => {
-                                return <p key={index}
-                                          className="is-capitalized">{abilities.ability.name}</p>
-                            })}
+                        <div className="abilities">
+                            <p id={"bold_words"}>Abilities: </p>
+                            <list>
+                               <ul> {abilities.map((abilities, index) => {
+                                return <p key={index}>{abilities.ability.name}</p>
+                            })}</ul>
+                            </list>
+
                         </div>
+                            <p className="subtitle is-6">{flavor_text}</p>
                     </div>
                 </div>
             </div>
