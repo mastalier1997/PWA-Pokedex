@@ -53,6 +53,12 @@
     float: right;
 }
 
+.search-nav Button{
+    color: white;
+    background: #fd3030;
+    border: 2px white;
+}
+
 @media screen and (max-width: 500px){
     .form-inline{
         display: block;
