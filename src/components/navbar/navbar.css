@@ -1,3 +1,4 @@
+
 .form-inline {
     display: block;
     flex-flow: row wrap;
@@ -20,19 +21,30 @@
 .search-nav{
     display: inline-block;
     float: right;
-
+    border: 2px solid white;
+    border-radius: 10px;
 }
 
 
 .form-inline input {
     padding: 10px;
-    background-color: #fff;
-    border: 1px solid #ddd;
+    background-color: #fd3030;
     font-family: "Courier New";
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    color: white;
 }
 
+::placeholder{
+    color: white;
+}
+
+
 .form-inline Button{
+    border: none;
     margin-left: 5px;
+    opacity: 50;
 }
 
 .color-nav{
@@ -71,6 +83,6 @@
 
     .search-nav{
         float: left;
-        padding-top: 15px;
+        margin-top: 15px;
     }
 }

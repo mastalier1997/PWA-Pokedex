@@ -36,7 +36,7 @@ function Detail(props) {
         <>
             <div className="parent">
                 <div className="div1">
-                    <img src={pokemon.sprites.front_default} width="400" height="400" alt="" />
+                    <img className={"sprite"} src={pokemon.sprites.front_default}/>
                 </div>
                 <div className="div2">
                   <a id={"bold_words"}>National-ID: #</a>{pokemon_id}
