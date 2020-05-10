@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import './Detail.css';
 import Card from "./Card";
+import Navbar1 from "./components/navbar/navbar";
 
 
 function Detail(props) {
@@ -34,13 +35,14 @@ function Detail(props) {
 //                    {species.map(species => <div>{species.flavor_text_entries}</div>)}
     return (
         <>
+            <Navbar1/>
             <div className="parent">
                 <div className="div1">
                     <img className={"sprite"} src={pokemon.sprites.front_default}/>
                 </div>
                 <div className="div2">
-                  <a id={"bold_words"}>National-ID: #</a>{pokemon_id}
-                  <br/>
+                    <a id={"bold_words"}>National-ID: #</a>{pokemon_id}
+                    <br/>
                     <a id={"bold_words"}>Name: </a>{pokemon.name}
 
 

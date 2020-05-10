@@ -44,4 +44,26 @@
         margin-bottom: 15px;
     }
 
+    .btn-l{
+        font-size: large;
+    }
+
+    .btn-r{
+        font-size: large;
+    }
+
+}
+
+@media screen and (max-width: 360px){
+    .grid-container{
+       justify-items: center;
+        margin-right: 22.5%;
+    }
+}
+
+@media screen and (min-width: 360px) and (max-width: 410px){
+    .grid-container{
+        justify-items: center;
+        margin-right: 18.5%;
+    }
 }

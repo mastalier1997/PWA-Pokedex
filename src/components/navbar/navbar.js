@@ -14,7 +14,7 @@ function Navbar1() {
                         <label>Pokémon PWA</label>
                         <div className={"search-nav"}>
                             <FormControl type={"text"} placeholder={"Search"}/>
-                            <Button><i className="fa fa-search"></i></Button>
+                            <Button type={"submit"}><i className="fa fa-search"></i></Button>
                         </div>
                     </Form>
                 </div>

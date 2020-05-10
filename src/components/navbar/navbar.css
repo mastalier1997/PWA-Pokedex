@@ -69,9 +69,10 @@
     color: white;
     background: #fd3030;
     border: 2px white;
+    outline: none;
 }
 
-@media screen and (max-width: 500px){
+@media screen and (max-width: 453px){
     .form-inline{
         display: block;
         flex-flow: row wrap;
@@ -85,4 +86,28 @@
         float: left;
         margin-top: 15px;
     }
+}
+
+@media screen and (min-width: 454px) and (max-width: 550px){
+    .form-inline{
+        background: #fd3030;
+        margin-bottom: 30px;
+        height: 120px;
+    }
+
+    .form-inline label {
+        font-size: 30px;
+        font-family: "Courier New";
+        color: white;
+        float: left;
+        display: flex;
+    }
+
+    .search-nav{
+       margin-top: 10px;
+        float: left;
+        margin-right: 20%;
+    }
+
+
 }
