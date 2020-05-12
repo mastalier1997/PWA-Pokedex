@@ -2,7 +2,7 @@ import React from 'react';
 import './Cell.css';
 import {ClassDeclaration as pokemon} from "@babel/types";
 import {Link} from 'react-router-dom';
-import Detail from "../../Detail";
+import Detail from "../details/Detail";
 
 function Cell({ pokemon }) {
     let id = pokemon.name;

@@ -3,6 +3,7 @@ import Cell from './components/cell/Cell_Exp';
 import { getPokemon, getAllPokemon } from './data/data';
 import './App.css';
 import Navbar from "./components/navbar/navbar";
+import {BrowserRouter as Router} from "react-router-dom";
 
 
 function App() {

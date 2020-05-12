@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import './Detail.css';
 import Card from "./Card";
-import Navbar1 from "./components/navbar/navbar";
+import Navbar1 from "../navbar/navbar";
 
 
 function Detail(props) {
