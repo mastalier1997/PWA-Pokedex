@@ -1,12 +1,35 @@
-import React from "react";
+import React, { useState } from "react";
 import "./navbar.css";
-import { Button, Form, FormControl, InputGroup } from "react-bootstrap";
+import { Button, Form, FormControl } from "react-bootstrap";
 import Navbar from "react-bootstrap/lib/Navbar";
+import { getPokemon, getAllPokemon } from "../../data/data";
 
 function Navbar1(props) {
-  var textInput = "";
+  /*
+  TODO: Alle Pokemon von API beziehen und als Promise Array
+        in allPokemonData laden.
+        
+  const pokemonURL = "https://pokeapi.co/api/v2/pokemon/";
+  const allPokemonDataPromise = getAllPokemon(pokemonURL);
+  allPokemonDataPromise.array.forEach(element => {
+    
+  });
+  let allPokemonData;
+  const loadPokemon = async (data) => {
+    allPokemonData = await Promise.all(
+      data.map(async (pokemon) => {
+        let pokemonRecord = await getPokemon(pokemon);
+        return pokemonRecord;
+      })
+    );
+  }; */
 
+  // Contains Input of User
+  var textInput;
+
+  // Filters Pokemon for given Search Query
   function handleChange(event) {
+    // loadPokemon(allPokemonDataPromise.results);
     const pokemonData = props.pokemonData.filter((pokemon) =>
       pokemon.name.includes(textInput.value)
     );
@@ -42,12 +65,3 @@ function Navbar1(props) {
 }
 
 export default Navbar1;
-/*
-<Link to={`/Detail/${pokemon.id}/`}>
-            <div className="Cell_img">
-                <img src={pokemon.sprites.front_default} alt="" />
-            </div>
-            <div className="Cell_name">
-                {pokemon.name}
-            </div>
-            </Link> */

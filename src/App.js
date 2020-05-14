@@ -7,6 +7,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 
 function App() {
   const [pokemonData, setPokemonData] = useState([]);
+  const [pokemonDataCopy, setPokemonDataCopy] = useState([]); // Für Search!
   const [loading, setLoading] = useState(true);
   const initialURL = "https://pokeapi.co/api/v2/pokemon?limit=50";
   const [prevURL, setPrevURL] = useState("");
@@ -31,6 +32,7 @@ function App() {
       })
     );
     setPokemonData(_pokemonData);
+    setPokemonDataCopy(_pokemonData); // Für Search !
   };
 
   const next = async () => {
@@ -52,14 +54,15 @@ function App() {
     setLoading(false);
   };
 
-  // Pokemons, die Suchkriterium erfüllen werden geladen
+  // Resultset of found Pokemon for the given search criteria gets
+  // loaded into pokemonData
   function handleChange(newPokemonData) {
     setPokemonData(newPokemonData);
   }
 
   return (
     <>
-      <Navbar pokemonData={pokemonData} onChange={handleChange} />
+      <Navbar pokemonData={pokemonDataCopy} onChange={handleChange} />
       <div>
         {loading ? (
           <h1 style={{ textAlign: "center", color: "white" }}>Loading...</h1>
