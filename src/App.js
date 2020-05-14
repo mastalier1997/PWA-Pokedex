@@ -1,17 +1,16 @@
-import React, { useState, useEffect } from 'react';
-import Cell from './components/cell/Cell_Exp';
-import { getPokemon, getAllPokemon } from './data/data';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import Cell from "./components/cell/Cell_Exp";
+import { getPokemon, getAllPokemon } from "./data/data";
+import "./App.css";
 import Navbar from "./components/navbar/navbar";
-import {BrowserRouter as Router} from "react-router-dom";
-
+import { BrowserRouter as Router } from "react-router-dom";
 
 function App() {
   const [pokemonData, setPokemonData] = useState([]);
   const [loading, setLoading] = useState(true);
-  const initialURL = 'https://pokeapi.co/api/v2/pokemon?limit=50';
-  const [prevURL, setPrevURL] = useState('');
-  const [nextURL, setNextURL] = useState('');
+  const initialURL = "https://pokeapi.co/api/v2/pokemon?limit=50";
+  const [prevURL, setPrevURL] = useState("");
+  const [nextURL, setNextURL] = useState("");
 
   useEffect(() => {
     async function fetchData() {
@@ -24,12 +23,13 @@ function App() {
     fetchData();
   }, []);
 
-
   const loadPokemon = async (data) => {
-    let _pokemonData = await Promise.all(data.map(async pokemon => {
-      let pokemonRecord = await getPokemon(pokemon)
-      return pokemonRecord
-    }));
+    let _pokemonData = await Promise.all(
+      data.map(async (pokemon) => {
+        let pokemonRecord = await getPokemon(pokemon);
+        return pokemonRecord;
+      })
+    );
     setPokemonData(_pokemonData);
   };
 
@@ -52,25 +52,36 @@ function App() {
     setLoading(false);
   };
 
+  // Pokemons, die Suchkriterium erfüllen werden geladen
+  function handleChange(newPokemonData) {
+    setPokemonData(newPokemonData);
+  }
+
   return (
-      <>
-        <Navbar/>
-        <div>
-        {loading ? <h1 style={{ textAlign: 'center', color: 'white'}}>Loading...</h1> : (
+    <>
+      <Navbar pokemonData={pokemonData} onChange={handleChange} />
+      <div>
+        {loading ? (
+          <h1 style={{ textAlign: "center", color: "white" }}>Loading...</h1>
+        ) : (
           <>
             <div className="grid-container">
               {pokemonData.map((pokemon, i) => {
-                return <Cell key={i} pokemon={pokemon} />
+                return <Cell key={i} pokemon={pokemon} />;
               })}
             </div>
             <div className="btn-field">
-              <button className={"btn-l"} onClick={prev}>←</button>
-              <button className={"btn-r"} onClick={next}>→</button>
+              <button className={"btn-l"} onClick={prev}>
+                ←
+              </button>
+              <button className={"btn-r"} onClick={next}>
+                →
+              </button>
             </div>
           </>
         )}
-        </div>
-      </>
+      </div>
+    </>
   );
 }
 
