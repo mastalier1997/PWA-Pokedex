@@ -35,7 +35,7 @@ function Detail(props) {
 
   // Link to Image in Detail View
   const imgLink =
-    "https://img.pokemondb.net/artwork/large/" + pokemon.name + ".jpg";
+    "https://assets.pokemon.com/assets/cms2/img/pokedex/full/" + pokemon_id +".png";
   return (
     <>
       <Navbar1 />

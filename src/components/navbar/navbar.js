@@ -60,7 +60,7 @@ function Navbar1(props) {
         <div className={"form-div"}>
           <Form className={"form-inline"}>
             <label>Pokémon PWA</label>
-            <div class="dropdown">
+            {/*  <div class="dropdown">
               <button class="dropbtn">Select Pokemon Type</button>
               <div class="dropdown-content">
                 <button value="all" onClick={(e) => handleClick(e)}>
@@ -121,7 +121,8 @@ function Navbar1(props) {
                   Fairy
                 </button>
               </div>
-            </div>
+
+            </div>*/}
 
             <div className={"search-nav"}>
               <FormControl

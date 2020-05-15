@@ -48,7 +48,7 @@
     margin: 5em;
     text-align: center;
     background-color: rgba(128, 128, 128, 0.8);
-    border-radius: 300px;
+    border-radius: 100px;
 }
 .div2 {
     grid-area: 4 / 2 /2 / 4;
