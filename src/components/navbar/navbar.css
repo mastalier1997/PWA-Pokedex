@@ -5,6 +5,7 @@
   background: #fd3030;
   padding: 20px;
   margin-bottom: 30px;
+  height: 110px;
 }
 
 .form-inline label {
@@ -22,6 +23,7 @@
   float: right;
   border: 2px solid white;
   border-radius: 10px;
+  margin-top: -50px;
 }
 
 .form-inline input {
@@ -83,7 +85,10 @@
   .search-nav {
     float: left;
     margin-top: 15px;
+    position: absolute;
+
   }
+
 }
 
 @media screen and (min-width: 454px) and (max-width: 550px) {
@@ -110,39 +115,45 @@
 
 /* Dropdown Button */
 .dropbtn {
-  background-color: #4caf50;
+  background-color: #fd3030;
   color: white;
   font-size: 16px;
+  font-family: "Courier New";
   border: none;
+  outline: none;
 }
 
 /* The container <div> - needed to position the dropdown content */
 .dropdown {
   position: relative;
-  display: inline-block;
+  padding-top: 10px;
 }
 
 /* Dropdown Content (Hidden by Default) */
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #f1f1f1;
+  background-color: #343232;
   min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 8px 16px 0px #403f3f;
   z-index: 1;
+  font-family: "Courier New";
 }
 
 /* Buttons inside the dropdown */
 .dropdown-content button {
-  color: black;
+  color: white;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
+  font-family: "Courier New";
+  background: #343232;
+  outline: none;
 }
 
 /* Change color of dropdown buttons on hover */
 .dropdown-content button:hover {
-  background-color: #ddd;
+  background-color: #2b2a2a;
 }
 
 /* Show the dropdown menu on hover */
@@ -152,5 +163,5 @@
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {
-  background-color: #3e8e41;
+  background-color: #403f3f;
 }
