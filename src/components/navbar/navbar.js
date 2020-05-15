@@ -74,115 +74,10 @@ function Navbar1(props) {
                 </button>
                 <button
                   type="button"
-                  value="normal"
-                  onClick={(e) => handleClick(e)}
-                >
-                  Normal
-                </button>
-                <button
-                  type="button"
-                  value="fighting"
-                  onClick={(e) => handleClick(e)}
-                >
-                  Fighting
-                </button>
-                <button
-                  type="button"
-                  value="flying"
-                  onClick={(e) => handleClick(e)}
-                >
-                  Flying
-                </button>
-                <button
-                  type="button"
-                  value="poison"
-                  onClick={(e) => handleClick(e)}
-                >
-                  Poison
-                </button>
-                <button
-                  type="button"
-                  value="ground"
-                  onClick={(e) => handleClick(e)}
-                >
-                  Ground
-                </button>
-                <button
-                  type="button"
-                  value="rock"
-                  onClick={(e) => handleClick(e)}
-                >
-                  Rock
-                </button>
-                <button
-                  type="button"
                   value="bug"
                   onClick={(e) => handleClick(e)}
                 >
                   Bug
-                </button>
-                <button
-                  type="button"
-                  value="ghost"
-                  onClick={(e) => handleClick(e)}
-                >
-                  Ghost
-                </button>
-                <button
-                  type="button"
-                  value="steel"
-                  onClick={(e) => handleClick(e)}
-                >
-                  Steel
-                </button>
-                <button
-                  type="button"
-                  value="fire"
-                  onClick={(e) => handleClick(e)}
-                >
-                  Fire
-                </button>
-                <button
-                  type="button"
-                  value="water"
-                  onClick={(e) => handleClick(e)}
-                >
-                  Water
-                </button>
-                <button
-                  type="button"
-                  value="grass"
-                  onClick={(e) => handleClick(e)}
-                >
-                  Grass
-                </button>
-                <button
-                  type="button"
-                  value="electric"
-                  onClick={(e) => handleClick(e)}
-                >
-                  Electric
-                </button>
-                <button
-                  type="button"
-                  value="psychic"
-                  onClick={(e) => handleClick(e)}
-                >
-                  Psychic
-                </button>
-                <button
-                  type="button"
-                  value="ice"
-                  onClick={(e) => handleClick(e)}
-                >
-                  Ice
-                </button>
-                <button
-                  type="button"
-                  value="dragon"
-                  onClick={(e) => handleClick(e)}
-                >
-                  Dragon
                 </button>
                 <button
                   type="button"
@@ -193,10 +88,116 @@ function Navbar1(props) {
                 </button>
                 <button
                   type="button"
+                  value="dragon"
+                  onClick={(e) => handleClick(e)}
+                >
+                  Dragon
+                </button>
+                <button
+                  type="button"
+                  value="electric"
+                  onClick={(e) => handleClick(e)}
+                >
+                  Electric
+                </button>
+                <button
+                  type="button"
                   value="fairy"
                   onClick={(e) => handleClick(e)}
                 >
                   Fairy
+                </button>
+                <button
+                  type="button"
+                  value="fighting"
+                  onClick={(e) => handleClick(e)}
+                >
+                  Fighting
+                </button>
+                <button
+                  type="button"
+                  value="fire"
+                  onClick={(e) => handleClick(e)}
+                >
+                  Fire
+                </button>
+                <button
+                  type="button"
+                  value="flying"
+                  onClick={(e) => handleClick(e)}
+                >
+                  Flying
+                </button>
+                <button
+                  type="button"
+                  value="ghost"
+                  onClick={(e) => handleClick(e)}
+                >
+                  Ghost
+                </button>
+                <button
+                  type="button"
+                  value="grass"
+                  onClick={(e) => handleClick(e)}
+                >
+                  Grass
+                </button>
+                <button
+                  type="button"
+                  value="ground"
+                  onClick={(e) => handleClick(e)}
+                >
+                  Ground
+                </button>
+                <button
+                  type="button"
+                  value="ice"
+                  onClick={(e) => handleClick(e)}
+                >
+                  Ice
+                </button>
+                <button
+                  type="button"
+                  value="normal"
+                  onClick={(e) => handleClick(e)}
+                >
+                  Normal
+                </button>
+
+                <button
+                  type="button"
+                  value="poison"
+                  onClick={(e) => handleClick(e)}
+                >
+                  Poison
+                </button>
+                <button
+                  type="button"
+                  value="psychic"
+                  onClick={(e) => handleClick(e)}
+                >
+                  Psychic
+                </button>
+                <button
+                  type="button"
+                  value="rock"
+                  onClick={(e) => handleClick(e)}
+                >
+                  Rock
+                </button>
+                <button
+                  type="button"
+                  value="steel"
+                  onClick={(e) => handleClick(e)}
+                >
+                  Steel
+                </button>
+                <button
+                  type="button"
+                  value="water"
+                  onClick={(e) => handleClick(e)}
+                >
+                  Water
                 </button>
               </div>
             </div>
