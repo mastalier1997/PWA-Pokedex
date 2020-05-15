@@ -3,14 +3,13 @@ import Cell from "./components/cell/Cell_Exp";
 import { getPokemon, getAllPokemon } from "./data/data";
 import "./App.css";
 import Navbar from "./components/navbar/navbar";
-import { BrowserRouter as Router } from "react-router-dom";
 
 function App() {
   const [pokemonData, setPokemonData] = useState([]);
   const [pokemonDataCopy, setPokemonDataCopy] = useState([]); // Für Search!
   const [loading, setLoading] = useState(true);
   const initialURL = "https://pokeapi.co/api/v2/pokemon?limit=50";
-  const allPokemonURL = "https://pokeapi.co/api/v2/pokemon?limit=964";
+  //const allPokemonURL = "https://pokeapi.co/api/v2/pokemon?limit=964";
   const [prevURL, setPrevURL] = useState("");
   const [nextURL, setNextURL] = useState("");
 
