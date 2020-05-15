@@ -28,10 +28,10 @@ function Navbar1(props) {
 
   // Filters Pokemon for given Search Query
   function handleChange(event) {
+    var pokeName = textInput.value.toLowerCase();
     const pokemonData = props.pokemonData.filter(
       (pokemon) =>
-        pokemon.id === parseInt(textInput.value, 10) ||
-        pokemon.name.includes(textInput.value)
+        pokemon.id === parseInt(pokeName, 10) || pokemon.name.includes(pokeName)
     );
     props.onChange(pokemonData);
   }
