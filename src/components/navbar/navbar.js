@@ -60,69 +60,144 @@ function Navbar1(props) {
         <div className={"form-div"}>
           <Form className={"form-inline"}>
             <label>Pokémon PWA</label>
-            {/*  <div class="dropdown">
+            <div class="dropdown">
               <button class="dropbtn">Select Pokemon Type</button>
               <div class="dropdown-content">
-                <button value="all" onClick={(e) => handleClick(e)}>
+                <button
+                  type="button"
+                  value="all"
+                  onClick={(e) => handleClick(e)}
+                >
                   All
                 </button>
-                <button value="normal" onClick={(e) => handleClick(e)}>
+                <button
+                  type="button"
+                  value="normal"
+                  onClick={(e) => handleClick(e)}
+                >
                   Normal
                 </button>
-                <button value="fighting" onClick={(e) => handleClick(e)}>
+                <button
+                  type="button"
+                  value="fighting"
+                  onClick={(e) => handleClick(e)}
+                >
                   Fighting
                 </button>
-                <button value="flying" onClick={(e) => handleClick(e)}>
+                <button
+                  type="button"
+                  value="flying"
+                  onClick={(e) => handleClick(e)}
+                >
                   Flying
                 </button>
-                <button value="poison" onClick={(e) => handleClick(e)}>
+                <button
+                  type="button"
+                  value="poison"
+                  onClick={(e) => handleClick(e)}
+                >
                   Poison
                 </button>
-                <button value="ground" onClick={(e) => handleClick(e)}>
+                <button
+                  type="button"
+                  value="ground"
+                  onClick={(e) => handleClick(e)}
+                >
                   Ground
                 </button>
-                <button value="rock" onClick={(e) => handleClick(e)}>
+                <button
+                  type="button"
+                  value="rock"
+                  onClick={(e) => handleClick(e)}
+                >
                   Rock
                 </button>
-                <button value="bug" onClick={(e) => handleClick(e)}>
+                <button
+                  type="button"
+                  value="bug"
+                  onClick={(e) => handleClick(e)}
+                >
                   Bug
                 </button>
-                <button value="ghost" onClick={(e) => handleClick(e)}>
+                <button
+                  type="button"
+                  value="ghost"
+                  onClick={(e) => handleClick(e)}
+                >
                   Ghost
                 </button>
-                <button value="steel" onClick={(e) => handleClick(e)}>
+                <button
+                  type="button"
+                  value="steel"
+                  onClick={(e) => handleClick(e)}
+                >
                   Steel
                 </button>
-                <button value="fire" onClick={(e) => handleClick(e)}>
+                <button
+                  type="button"
+                  value="fire"
+                  onClick={(e) => handleClick(e)}
+                >
                   Fire
                 </button>
-                <button value="water" onClick={(e) => handleClick(e)}>
+                <button
+                  type="button"
+                  value="water"
+                  onClick={(e) => handleClick(e)}
+                >
                   Water
                 </button>
-                <button value="grass" onClick={(e) => handleClick(e)}>
+                <button
+                  type="button"
+                  value="grass"
+                  onClick={(e) => handleClick(e)}
+                >
                   Grass
                 </button>
-                <button value="electric" onClick={(e) => handleClick(e)}>
+                <button
+                  type="button"
+                  value="electric"
+                  onClick={(e) => handleClick(e)}
+                >
                   Electric
                 </button>
-                <button value="psychic" onClick={(e) => handleClick(e)}>
+                <button
+                  type="button"
+                  value="psychic"
+                  onClick={(e) => handleClick(e)}
+                >
                   Psychic
                 </button>
-                <button value="ice" onClick={(e) => handleClick(e)}>
+                <button
+                  type="button"
+                  value="ice"
+                  onClick={(e) => handleClick(e)}
+                >
                   Ice
                 </button>
-                <button value="dragon" onClick={(e) => handleClick(e)}>
+                <button
+                  type="button"
+                  value="dragon"
+                  onClick={(e) => handleClick(e)}
+                >
                   Dragon
                 </button>
-                <button value="dark" onClick={(e) => handleClick(e)}>
+                <button
+                  type="button"
+                  value="dark"
+                  onClick={(e) => handleClick(e)}
+                >
                   Dark
                 </button>
-                <button value="fairy" onClick={(e) => handleClick(e)}>
+                <button
+                  type="button"
+                  value="fairy"
+                  onClick={(e) => handleClick(e)}
+                >
                   Fairy
                 </button>
               </div>
-
-            </div>*/}
+            </div>
 
             <div className={"search-nav"}>
               <FormControl
