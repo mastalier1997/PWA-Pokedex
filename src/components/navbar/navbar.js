@@ -29,12 +29,10 @@ function Navbar1(props) {
 
   // Filters Pokemon for given Search Query
   function handleChange(event) {
-    // loadPokemon(allPokemonDataPromise.results);
-    //   const pokemonData = props.pokemonData.filter((pokemon) =>
-    //    pokemon.name.includes(textInput.value)
-    //  );
     const pokemonData = props.pokemonData.filter(
-      (pokemon) => (pokemon.id = parseInt(textInput, 10))
+      (pokemon) =>
+        pokemon.id === parseInt(textInput.value, 10) ||
+        pokemon.name.includes(textInput.value)
     );
     props.onChange(pokemonData);
   }
@@ -53,7 +51,7 @@ function Navbar1(props) {
               <FormControl
                 type="text"
                 inputRef={(ref) => (textInput = ref)}
-                placeholder={"Search by name"}
+                placeholder={"Search by name or id"}
                 onChange={handleChange}
               />
               <Button type={"submit"}>
