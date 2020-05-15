@@ -4,25 +4,6 @@ import { Button, Form, FormControl } from "react-bootstrap";
 import Navbar from "react-bootstrap/lib/Navbar";
 
 function Navbar1(props) {
-  /*
-  TODO: Alle Pokemon von API beziehen und als Promise Array
-        in allPokemonData laden.
-        
-  const pokemonURL = "https://pokeapi.co/api/v2/pokemon/";
-  const allPokemonDataPromise = getAllPokemon(pokemonURL);
-  allPokemonDataPromise.array.forEach(element => {
-    
-  });
-  let allPokemonData;
-  const loadPokemon = async (data) => {
-    allPokemonData = await Promise.all(
-      data.map(async (pokemon) => {
-        let pokemonRecord = await getPokemon(pokemon);
-        return pokemonRecord;
-      })
-    );
-  }; */
-
   // Contains Input of User
   var textInput;
 
@@ -50,6 +31,25 @@ function Navbar1(props) {
     }
   }
 
+  // Opens Dropdown Menu on Button Click
+  function handleButtonClick() {
+    document.getElementById("dropdown").classList.toggle("show");
+  }
+
+  // Close the dropdown menu if the user clicks outside of it
+  window.onclick = function (event) {
+    if (!event.target.matches(".dropbtn")) {
+      var dropdowns = document.getElementsByClassName("dropdown-content");
+      var i;
+      for (i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains("show")) {
+          openDropdown.classList.remove("show");
+        }
+      }
+    }
+  };
+
   return (
     <Navbar>
       <link
@@ -61,8 +61,10 @@ function Navbar1(props) {
           <Form className={"form-inline"}>
             <label>Pokémon PWA</label>
             <div class="dropdown">
-              <button class="dropbtn">Select Pokemon Type</button>
-              <div class="dropdown-content">
+              <button type="button" onClick={handleButtonClick} class="dropbtn">
+                Select Pokemon Type
+              </button>
+              <div id="dropdown" class="dropdown-content">
                 <button
                   type="button"
                   value="all"
