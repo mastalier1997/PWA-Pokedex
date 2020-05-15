@@ -42,7 +42,9 @@ function Navbar1(props) {
       props.onChange(props.pokemonData);
     } else {
       const pokemonData = props.pokemonData.filter(
-        (pokemon) => pokemon.types[0].type.name === e.target.value
+        (pokemon) =>
+          pokemon.types[0].type.name === e.target.value ||
+          pokemon.types[pokemon.types.length - 1].type.name === e.target.value
       );
       props.onChange(pokemonData);
     }
