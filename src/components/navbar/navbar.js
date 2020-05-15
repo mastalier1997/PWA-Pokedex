@@ -30,8 +30,11 @@ function Navbar1(props) {
   // Filters Pokemon for given Search Query
   function handleChange(event) {
     // loadPokemon(allPokemonDataPromise.results);
-    const pokemonData = props.pokemonData.filter((pokemon) =>
-      pokemon.name.includes(textInput.value)
+    //   const pokemonData = props.pokemonData.filter((pokemon) =>
+    //    pokemon.name.includes(textInput.value)
+    //  );
+    const pokemonData = props.pokemonData.filter(
+      (pokemon) => (pokemon.id = parseInt(textInput, 10))
     );
     props.onChange(pokemonData);
   }
