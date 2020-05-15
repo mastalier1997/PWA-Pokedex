@@ -10,6 +10,7 @@ function App() {
   const [pokemonDataCopy, setPokemonDataCopy] = useState([]); // Für Search!
   const [loading, setLoading] = useState(true);
   const initialURL = "https://pokeapi.co/api/v2/pokemon?limit=50";
+  const allPokemonURL = "https://pokeapi.co/api/v2/pokemon?limit=964";
   const [prevURL, setPrevURL] = useState("");
   const [nextURL, setNextURL] = useState("");
 
