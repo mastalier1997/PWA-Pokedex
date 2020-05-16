@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import "./Detail.css";
 import Card from "./Card";
 import Navbar1 from "../navbar/navbar";
+import {Form} from "react-bootstrap";
+import {Link} from "react-router-dom";
 
 function Detail(props) {
   const [isLoading, setIsLoading] = useState(true);
@@ -38,14 +40,20 @@ function Detail(props) {
     "https://assets.pokemon.com/assets/cms2/img/pokedex/full/" + pokemon_id +".png";
   return (
     <>
-      <Navbar1 />
+      <div className="detail_header">
+        <Link to={`/`}>
+          <label>Pokémon PWA</label>
+        </Link>
+      </div>
       <div className="parent">
         <div className="div1">
+
           <img
             className={"sprite"}
             src={imgLink}
             alt="<    Image could not be loaded    >"
           />
+
         </div>
         <div className="div2">
           <a id={"bold_words"}>National-ID: #</a>
