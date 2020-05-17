@@ -2,6 +2,7 @@ import React from "react";
 import "./navbar.css";
 import { Button, Form, FormControl } from "react-bootstrap";
 import Navbar from "react-bootstrap/lib/Navbar";
+import {Link} from "react-router-dom";
 
 function Navbar1(props) {
   // Contains Input of User
@@ -59,7 +60,10 @@ function Navbar1(props) {
       <Navbar.Collapse id="basic-navbar-nav">
         <div className={"form-div"}>
           <Form className={"form-inline"}>
-            <label>Pokémon PWA</label>
+            <Link to={`/`}>
+              <label>Pokémon PWA</label>
+            </Link>
+
             <div class="dropdown">
               <button type="button" onClick={handleButtonClick} class="dropbtn">
                 Select Pokemon Type

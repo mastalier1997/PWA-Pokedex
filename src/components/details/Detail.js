@@ -40,11 +40,7 @@ function Detail(props) {
     "https://assets.pokemon.com/assets/cms2/img/pokedex/full/" + pokemon_id +".png";
   return (
     <>
-      <div className="detail_header">
-        <Link to={`/`}>
-          <label>Pokémon PWA</label>
-        </Link>
-      </div>
+      <Navbar1/>
       <div className="parent">
         <div className="div1">
 
@@ -71,7 +67,7 @@ function Detail(props) {
           />
         </div>
       </div>
-    </>
+      </>
   );
 }
 
