@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './Detail.css';
 
-const Types = ({ types, height, weight, abilities, flavor_text}) => {
+const Types = ({ types, height, weight, abilities}) => {
     return (
         <div className="card">
 
@@ -33,7 +33,6 @@ const Types = ({ types, height, weight, abilities, flavor_text}) => {
                             </list>
 
                         </div>
-                            <p className="subtitle is-6">{flavor_text}</p>
                     </div>
                 </div>
             </div>
