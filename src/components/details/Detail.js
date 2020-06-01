@@ -10,27 +10,27 @@ function Detail(props) {
   const [pokemon, setPokemon] = useState(null);
   const [species, specieObject] = useState(null);
   const [evolution, evolutionObject] = useState(null);
+  const [evol_img, SetEvol_img] = useState(null);
 
   async function fetchPokemon(id) {
     //gets Pokemon Infos
-    const result = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
-    const json = await result.json();
+    const result = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`).then(res => res.json());
     //gets Pokemon flavor_text
-    const result2 = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${id}`);
-    const json2 = await result2.json();
-    setPokemon(json);
-    specieObject(json2);
-    const evo_url = Object.values(json2.evolution_chain).pop();
+    const result2 = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${id}`).then(res2 => res2.json());
+    setPokemon(result);
+    specieObject(result2);
+
+    const evo_url = Object.values(result2.evolution_chain).pop();
     let result3 = await fetch(`${evo_url}`);
     let json3 = await result3.json();
     evolutionObject(json3);
-
     setIsLoading(false);
   }
 
+
   useEffect(() => {
     fetchPokemon(props.match.params.id);
-  });
+  }, []);
 
   if (isLoading) return <p>Loading</p>;
 
@@ -47,40 +47,45 @@ function Detail(props) {
   const flavor = Object.values(species.flavor_text_entries).pop();
 
   const evo = Object.values(evolution.chain.evolves_to).pop();
-  let evo2;
-  let evo22;
-  let evo1;
+  let prev_evo;
+  let next_evo;
+  let next_evo_text;
+
 
   if(((evolution.chain.evolves_to).length > 0)){
-
-
     if((evo.evolves_to).length > 0){
       if(evo.species.name === (pokemon.name)){
-        evo2 = Object.values(evo.evolves_to).pop();
-        evo22 = evo2.species.name;
+        next_evo = Object.values(evo.evolves_to).pop();
+        next_evo_text = next_evo.species.name;
       }else if(Object.values(evo.evolves_to).pop().species.name === pokemon.name){
-        evo22 = "-";
+        next_evo_text = "-";
       }else{
-        evo2 = Object.values(evolution.chain.evolves_to).pop();
-        evo22 = evo2.species.name;
+        next_evo = Object.values(evolution.chain.evolves_to).pop();
+        next_evo_text = next_evo.species.name;
       }
     }else{
       if(evo.species.name === (pokemon.name)){
-        evo22 = "-";
+        next_evo_text = "-";
       }else{
-        evo2 = Object.values(evolution.chain.evolves_to).pop();
-        evo22 = evo2.species.name;
+        next_evo = Object.values(evolution.chain.evolves_to).pop();
+        next_evo_text = next_evo.species.name;
       }
     }
     if(((species.evolves_from_species) === null)){
-      evo1 = "-";
+      prev_evo = "-";
     }else{
-      evo1 = Object.values(species.evolves_from_species.name);
+      prev_evo = Object.values(species.evolves_from_species.name);
     }
   }else{
-    evo22 = "-";
-    evo1 = "-";
+    next_evo_text = "-";
+    prev_evo = "-";
   }
+  async function fetchEvoImg(id) {
+
+    const img_result = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`).then(res => res.json());
+    SetEvol_img(img_result.sprites.front_default);
+  }
+  fetchEvoImg(next_evo_text);
 
   return (
     <>
@@ -105,9 +110,12 @@ function Detail(props) {
             {flavor.flavor_text}
           </p>
           <p id={"bold_words"}>Previous evolutions: </p>
-          <p>{evo1}</p>
+          <p>{prev_evo}</p>
           <p id={"bold_words"}>Next evolutions: </p>
-          <p>{evo22}</p>
+          <img src={evol_img} alt="" />
+          <a>{next_evo_text}</a>
+
+
 
         </div>
         <div className="div3">
