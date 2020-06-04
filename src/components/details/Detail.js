@@ -88,17 +88,19 @@ function Detail(props) {
   }
 
   //Gets Pokemon evolution image
-  async function fetchEvoImg(id, id2) {
+  async function fetchNextEvoImg(id) {
 
     const img_result = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`).then(res => res.json());
     SetEvol_img(img_result.sprites.front_default);
+  }
+  async function fetchPrevEvoImg(id) {
 
-    const img_result2 = await fetch(`https://pokeapi.co/api/v2/pokemon/${id2}`).then(res2 => res2.json());
+    const img_result2 = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`).then(res2 => res2.json());
     SetPrevEvol_img(img_result2.sprites.front_default);
   }
 
-  fetchEvoImg(next_evo_text, prev_evo);
-
+  fetchNextEvoImg(next_evo_text);
+  fetchPrevEvoImg(prev_evo)
   return (
     <>
       <Navbar1/>
