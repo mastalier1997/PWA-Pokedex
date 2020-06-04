@@ -11,6 +11,7 @@ function Detail(props) {
   const [species, specieObject] = useState(null);
   const [evolution, evolutionObject] = useState(null);
   const [evol_img, SetEvol_img] = useState(null);
+  const [prev_evol_img, SetPrevEvol_img] = useState(null);
 
   async function fetchPokemon(id) {
     //gets Pokemon Infos
@@ -44,7 +45,12 @@ function Detail(props) {
   const imgLink =
     "https://assets.pokemon.com/assets/cms2/img/pokedex/full/" + pokemon_id +".png";
 
-  const flavor = Object.values(species.flavor_text_entries).pop();
+  let flavor;
+  for(let i = 0; i < species.flavor_text_entries.length; i++){
+    if(species.flavor_text_entries[i].language.name === "en"){
+      flavor = species.flavor_text_entries[i];
+    }
+  }
 
   const evo = Object.values(evolution.chain.evolves_to).pop();
   let prev_evo;
@@ -74,18 +80,24 @@ function Detail(props) {
     if(((species.evolves_from_species) === null)){
       prev_evo = "-";
     }else{
-      prev_evo = Object.values(species.evolves_from_species.name);
+      prev_evo = species.evolves_from_species.name;
     }
   }else{
     next_evo_text = "-";
     prev_evo = "-";
   }
-  async function fetchEvoImg(id) {
+
+  //Gets Pokemon evolution image
+  async function fetchEvoImg(id, id2) {
 
     const img_result = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`).then(res => res.json());
     SetEvol_img(img_result.sprites.front_default);
+
+    const img_result2 = await fetch(`https://pokeapi.co/api/v2/pokemon/${id2}`).then(res2 => res2.json());
+    SetPrevEvol_img(img_result2.sprites.front_default);
   }
-  fetchEvoImg(next_evo_text);
+
+  fetchEvoImg(next_evo_text, prev_evo);
 
   return (
     <>
@@ -110,12 +122,9 @@ function Detail(props) {
             {flavor.flavor_text}
           </p>
           <p id={"bold_words"}>Previous evolutions: </p>
-          <p>{prev_evo}</p>
+          <img src={prev_evol_img} alt="" />
           <p id={"bold_words"}>Next evolutions: </p>
           <img src={evol_img} alt="" />
-          <a>{next_evo_text}</a>
-
-
 
         </div>
         <div className="div3">
