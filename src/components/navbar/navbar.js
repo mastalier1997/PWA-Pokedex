@@ -8,6 +8,12 @@ function Navbar1(props) {
   // Contains Input of User
   var textInput;
 
+  let dropShow={};
+  let curURL = window.location.href.toString();
+  if(curURL.includes("Detail")){
+    dropShow.visibility = 'hidden';
+  }
+
   // Filters Pokemon for given Search Query
   function handleChange(event) {
     var pokeName = textInput.value.toLowerCase();
@@ -64,7 +70,7 @@ function Navbar1(props) {
               <label>Pokémon PWA</label>
             </Link>
 
-            <div class="dropdown">
+            <div class="dropdown" style={dropShow}>
               <button type="button" onClick={handleButtonClick} class="dropbtn">
                 Select Pokemon Type
               </button>
