@@ -84,6 +84,9 @@ function App() {
           </>
         )}
       </div>
+        <footer >
+            <p id={"foot"}>Based on <a href={"https://pokeapi.co/"}>PokéAPI</a> & <a href={"https://www.pokemon.com/us/pokedex/"}>Pokémon</a></p>
+        </footer>
     </>
   );
 }

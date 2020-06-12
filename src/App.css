@@ -67,3 +67,16 @@
         margin-right: 18.5%;
     }
 }
+
+footer{
+    color: white;
+    font-size: smaller;
+    margin-left: 5px;
+}
+
+#foot *{
+    color: white;
+    outline: none;
+    font-size: smaller;
+    outline: none;
+}
