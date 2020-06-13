@@ -154,6 +154,10 @@
   background-color: #2b2a2a;
 }
 
+.dropdown-content button:active .dropdown-content {
+  display: none;
+}
+
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {
   display: block;
