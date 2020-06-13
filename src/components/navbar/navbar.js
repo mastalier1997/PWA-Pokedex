@@ -1,40 +1,78 @@
-import React from "react";
+import React, { useState } from "react";
 import "./navbar.css";
 import { Button, Form, FormControl } from "react-bootstrap";
+import { getPokemon, getAllPokemon } from "../../data/data";
 import Navbar from "react-bootstrap/lib/Navbar";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Navbar1(props) {
   // Contains Input of User
   var textInput;
 
-  let dropShow={};
+  // Remove dropdown & searchfield in details
+  let dropShow = {};
+  let searchField = {};
   let curURL = window.location.href.toString();
-  if(curURL.includes("Detail")){
-    dropShow.visibility = 'hidden';
+  if (curURL.includes("Detail")) {
+    dropShow.visibility = "hidden";
+    searchField.visibility = "hidden";
   }
 
-  // Filters Pokemon for given Search Query
+  // Fetch pokemon details from api
+  const loadPokemon = async (data) => {
+    let _pokemonData = await Promise.all(
+      data.map(async (pokemon) => {
+        let pokemonRecord = await getPokemon(pokemon);
+        return pokemonRecord;
+      })
+    );
+    return await _pokemonData;
+  };
+
+  // Filter pokemon by search value and load details for them
+  async function filterAndLoadPokemon(pokeName) {
+    let res = await props.searchResponse.results.filter(
+      (pokemon) => pokemon.name.includes(pokeName) || pokemon.id === pokeName
+    );
+
+    return await loadPokemon(res);
+  }
+
+  // Handle Change on input field
   function handleChange(event) {
     var pokeName = textInput.value.toLowerCase();
-    const pokemonData = props.pokemonData.filter(
-      (pokemon) =>
-        pokemon.id === parseInt(pokeName, 10) || pokemon.name.includes(pokeName)
-    );
-    props.onChange(pokemonData);
+
+    if (pokeName.length <= 0) {
+      props.prevNextVisibility(true);
+      props.onChange(props.pokemonData);
+    } else {
+      props.onLoading(true);
+      filterAndLoadPokemon(pokeName).then(function (result) {
+        props.onLoading(false);
+        props.prevNextVisibility(false);
+        props.onChange(result);
+      });
+    }
   }
 
   // Filters Pokemon for given Type
   function handleClick(e) {
     if (e.target.value === "all") {
+      props.prevNextVisibility(true);
       props.onChange(props.pokemonData);
     } else {
-      const pokemonData = props.pokemonData.filter(
-        (pokemon) =>
-          pokemon.types[0].type.name === e.target.value ||
-          pokemon.types[pokemon.types.length - 1].type.name === e.target.value
-      );
-      props.onChange(pokemonData);
+      props.onLoading(true);
+      e.persist(true);
+      loadPokemon(props.searchResponse.results).then(function (result) {
+        const pokemonData = result.filter(
+          (pokemon) =>
+            pokemon.types[0].type.name === e.target.value ||
+            pokemon.types[pokemon.types.length - 1].type.name === e.target.value
+        );
+        props.onLoading(false);
+        props.prevNextVisibility(false);
+        props.onChange(pokemonData);
+      });
     }
   }
 
@@ -70,11 +108,15 @@ function Navbar1(props) {
               <label>Pokémon PWA</label>
             </Link>
 
-            <div class="dropdown" style={dropShow}>
-              <button type="button" onClick={handleButtonClick} class="dropbtn">
+            <div className="dropdown" style={dropShow}>
+              <button
+                type="button"
+                onClick={handleButtonClick}
+                className="dropbtn"
+              >
                 Select Pokemon Type
               </button>
-              <div id="dropdown" class="dropdown-content">
+              <div id="dropdown" className="dropdown-content">
                 <button
                   type="button"
                   value="all"
@@ -212,7 +254,7 @@ function Navbar1(props) {
               </div>
             </div>
 
-            <div className={"search-nav"}>
+            <div className={"search-nav"} style={searchField}>
               <FormControl
                 type="text"
                 inputRef={(ref) => (textInput = ref)}
