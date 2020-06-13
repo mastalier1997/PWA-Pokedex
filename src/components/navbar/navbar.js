@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import "./navbar.css";
 import { Button, Form, FormControl } from "react-bootstrap";
-import { getPokemon, getAllPokemon } from "../../data/data";
+import { getPokemon } from "../../data/data";
 import Navbar from "react-bootstrap/lib/Navbar";
 import { Link } from "react-router-dom";
 
