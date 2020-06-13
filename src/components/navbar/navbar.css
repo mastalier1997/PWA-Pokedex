@@ -154,8 +154,8 @@
   background-color: #2b2a2a;
 }
 
-.dropdown-content button:active .dropdown-content {
-  display: none;
+.dropdown-content button:active {
+  background-color: #111111;
 }
 
 /* Show the dropdown menu on hover */
