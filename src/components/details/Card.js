@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './Detail.css';
+import './Card.css';
 
 const Types = ({ types, height, weight, abilities}) => {
     return (
