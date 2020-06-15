@@ -3,6 +3,7 @@ import "./Detail.css";
 import Card from "./Card";
 import Navbar1 from "../navbar/navbar";
 import {getPokemon} from "../../data/data";
+import {Link} from "react-router-dom";
 
 
 function Detail(props) {
@@ -80,7 +81,7 @@ function Detail(props) {
     if(((species.evolves_from_species) === null)){
       prev_evo = "-";
     }else{
-      prev_evo = species.evolves_from_species.name;
+      prev_evo = species.evolves_from_species;
     }
   }else{
     next_evo_text = "-";
@@ -100,7 +101,7 @@ function Detail(props) {
   }
 
   fetchNextEvoImg(next_evo_text);
-  fetchPrevEvoImg(prev_evo)
+  fetchPrevEvoImg(prev_evo.name)
   return (
     <>
       <Navbar1/>
@@ -124,10 +125,13 @@ function Detail(props) {
             {flavor.flavor_text}
           </p>
           <p id={"bold_words"}>Previous evolutions: </p>
-          <img src={prev_evol_img} alt="" />
+          <Link to={`/Detail/${prev_evo.name}`}>
+            <img src={prev_evol_img} alt="" />
+          </Link>
           <p id={"bold_words"}>Next evolutions: </p>
-          <img src={evol_img} alt="" />
-
+          <Link to={`/Detail/${next_evo_text}`}>
+            <img src={evol_img} alt="" />
+          </Link>
         </div>
         <div className="div3">
           <Card
