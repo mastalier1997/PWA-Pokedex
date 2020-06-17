@@ -34,7 +34,7 @@ function Detail(props) {
     fetchPokemon(props.match.params.id);
   }, []);
 
-  if (isLoading) return <p hidden>Loading</p>;
+  if (isLoading) return <p>Loading</p>;
 
 
   let id_str = "" + pokemon.id;
@@ -43,10 +43,10 @@ function Detail(props) {
 
 
   // Link to Image in Detail View
-  let imgLink =
+  const imgLink =
     "https://assets.pokemon.com/assets/cms2/img/pokedex/full/" + pokemon_id +".png";
 
-  let notPic;
+  /*let notPic;
   if (pokemon_id==="undefined"||pokemon_id==null){
       notPic=<p>test</p>;
   }else{
@@ -55,10 +55,10 @@ function Detail(props) {
         src={imgLink}
         alt="<    Image could not be loaded    >"
     />
-  }
+  }*/
 
 
-  if (pokemon_id==="undefined") imgLink=null;
+  //if (pokemon_id==="undefined") imgLink=null;
 
   let flavor;
   for(let i = 0; i < species.flavor_text_entries.length; i++){
@@ -134,7 +134,11 @@ function Detail(props) {
       <div className="parent">
         <div className="div1">
 
-          {notPic}
+          <img
+              className={"sprite"}
+              src={imgLink}
+              alt="<    Image could not be loaded    >"
+          />
 
         </div>
         <div className="div2">
@@ -149,12 +153,12 @@ function Detail(props) {
           <p id={"bold_words"}>Previous evolutions: </p>
           <Link to={`/Detail/${prev_evo.name}`} /*onClick={loadPrevPage}*/>
             <img src={prev_evol_img} alt="" />
-            <p>{prev_evo.name}</p>
+
           </Link>
           <p id={"bold_words"}>Next evolutions: </p>
           <Link to={`/Detail/${next_evo_text}`} /*onClick={loadNextPage}*/>
             <img src={evol_img} alt="" />
-            <p>{next_evo_text}</p>
+
           </Link>
         </div>
         <div className="div3">
