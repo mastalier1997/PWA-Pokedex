@@ -59,7 +59,7 @@ function Detail(props) {
 
 
   //if (pokemon_id==="undefined") imgLink=null;
-
+  //TESTTTTT
   let flavor;
   for(let i = 0; i < species.flavor_text_entries.length; i++){
     if(species.flavor_text_entries[i].language.name === "en"){
