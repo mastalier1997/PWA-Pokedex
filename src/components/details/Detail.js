@@ -147,12 +147,12 @@ function Detail(props) {
             {flavor.flavor_text}
           </p>
           <p id={"bold_words"}>Previous evolutions: </p>
-          <Link to={`/Detail/${prev_evo.name}`} onClick={loadPrevPage}>
+          <Link to={`/Detail/${prev_evo.name}`} /*onClick={loadPrevPage}*/>
             <img src={prev_evol_img} alt="" />
             <p>{prev_evo.name}</p>
           </Link>
           <p id={"bold_words"}>Next evolutions: </p>
-          <Link to={`/Detail/${next_evo_text}`} onClick={loadNextPage}>
+          <Link to={`/Detail/${next_evo_text}`} /*onClick={loadNextPage}*/>
             <img src={evol_img} alt="" />
             <p>{next_evo_text}</p>
           </Link>
