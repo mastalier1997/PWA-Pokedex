@@ -3,6 +3,7 @@ import "./Detail.css";
 import Card from "./Card";
 import Navbar1 from "../navbar/navbar";
 import {getPokemon} from "../../data/data";
+import {Link} from "react-router-dom";
 
 
 function Detail(props) {
@@ -45,6 +46,20 @@ function Detail(props) {
   const imgLink =
     "https://assets.pokemon.com/assets/cms2/img/pokedex/full/" + pokemon_id +".png";
 
+  /*let notPic;
+  if (pokemon_id==="undefined"||pokemon_id==null){
+      notPic=<p>test</p>;
+  }else{
+    notPic= <img
+        className={"sprite"}
+        src={imgLink}
+        alt="<    Image could not be loaded    >"
+    />
+  }*/
+
+
+  //if (pokemon_id==="undefined") imgLink=null;
+  //TESTTTTT
   let flavor;
   for(let i = 0; i < species.flavor_text_entries.length; i++){
     if(species.flavor_text_entries[i].language.name === "en"){
@@ -80,7 +95,7 @@ function Detail(props) {
     if(((species.evolves_from_species) === null)){
       prev_evo = "-";
     }else{
-      prev_evo = species.evolves_from_species.name;
+      prev_evo = species.evolves_from_species;
     }
   }else{
     next_evo_text = "-";
@@ -98,9 +113,21 @@ function Detail(props) {
     const img_result2 = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`).then(res2 => res2.json());
     SetPrevEvol_img(img_result2.sprites.front_default);
   }
+  
+  function loadNextPage() {
+    let url = window.location.href.toString();
+    let url2 = url.substr(0,url.indexOf("Detail"));
+    window.location.assign(url2+'Detail/'+next_evo_text);
+  }
+
+  function loadPrevPage() {
+    let url = window.location.href.toString();
+    let url2 = url.substr(0,url.indexOf("Detail"));
+    window.location.assign(url2+'Detail/'+prev_evo.name);
+  }
 
   fetchNextEvoImg(next_evo_text);
-  fetchPrevEvoImg(prev_evo)
+  fetchPrevEvoImg(prev_evo.name)
   return (
     <>
       <Navbar1/>
@@ -108,9 +135,9 @@ function Detail(props) {
         <div className="div1">
 
           <img
-            className={"sprite"}
-            src={imgLink}
-            alt="<    Image could not be loaded    >"
+              className={"sprite"}
+              src={imgLink}
+              alt="<    Image could not be loaded    >"
           />
 
         </div>
@@ -124,10 +151,15 @@ function Detail(props) {
             {flavor.flavor_text}
           </p>
           <p id={"bold_words"}>Previous evolutions: </p>
-          <img src={prev_evol_img} alt="" />
-          <p id={"bold_words"}>Next evolutions: </p>
-          <img src={evol_img} alt="" />
+          <Link to={`/Detail/${prev_evo.name}`} /*onClick={loadPrevPage}*/>
+            <img src={prev_evol_img} alt="" />
 
+          </Link>
+          <p id={"bold_words"}>Next evolutions: </p>
+          <Link to={`/Detail/${next_evo_text}`} /*onClick={loadNextPage}*/>
+            <img src={evol_img} alt="" />
+
+          </Link>
         </div>
         <div className="div3">
           <Card
