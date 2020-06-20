@@ -2,9 +2,8 @@ import React, { useState, useEffect } from "react";
 import "./Detail.css";
 import Card from "./Card";
 import Navbar1 from "../navbar/navbar";
-import {getPokemon} from "../../data/data";
-import {Link} from "react-router-dom";
-
+import { getPokemon } from "../../data/data";
+import { Link } from "react-router-dom";
 
 function Detail(props) {
   const [isLoading, setIsLoading] = useState(true);
@@ -16,9 +15,13 @@ function Detail(props) {
 
   async function fetchPokemon(id) {
     //gets Pokemon Infos
-    const result = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`).then(res => res.json());
+    const result = await fetch(
+      `https://pokeapi.co/api/v2/pokemon/${id}`
+    ).then((res) => res.json());
     //gets Pokemon flavor_text
-    const result2 = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${id}`).then(res2 => res2.json());
+    const result2 = await fetch(
+      `https://pokeapi.co/api/v2/pokemon-species/${id}`
+    ).then((res2) => res2.json());
     setPokemon(result);
     specieObject(result2);
 
@@ -29,22 +32,21 @@ function Detail(props) {
     setIsLoading(false);
   }
 
-
   useEffect(() => {
     fetchPokemon(props.match.params.id);
   }, []);
 
   if (isLoading) return <p hidden>Loading</p>;
 
-
   let id_str = "" + pokemon.id;
   let zero = "000";
   let pokemon_id = zero.substring(0, zero.length - id_str.length) + id_str;
 
-
   // Link to Image in Detail View
   const imgLink =
-    "https://assets.pokemon.com/assets/cms2/img/pokedex/full/" + pokemon_id +".png";
+    "https://assets.pokemon.com/assets/cms2/img/pokedex/full/" +
+    pokemon_id +
+    ".png";
 
   /*let notPic;
   if (pokemon_id==="undefined"||pokemon_id==null){
@@ -57,12 +59,11 @@ function Detail(props) {
     />
   }*/
 
-
   //if (pokemon_id==="undefined") imgLink=null;
   //TESTTTTT
   let flavor;
-  for(let i = 0; i < species.flavor_text_entries.length; i++){
-    if(species.flavor_text_entries[i].language.name === "en"){
+  for (let i = 0; i < species.flavor_text_entries.length; i++) {
+    if (species.flavor_text_entries[i].language.name === "en") {
       flavor = species.flavor_text_entries[i];
     }
   }
@@ -72,74 +73,101 @@ function Detail(props) {
   let next_evo;
   let next_evo_text;
 
-
-  if(((evolution.chain.evolves_to).length > 0)){
-    if((evo.evolves_to).length > 0){
-      if(evo.species.name === (pokemon.name)){
+  if (evolution.chain.evolves_to.length > 0) {
+    if (evo.evolves_to.length > 0) {
+      if (evo.species.name === pokemon.name) {
         next_evo = Object.values(evo.evolves_to).pop();
         next_evo_text = next_evo.species.name;
-      }else if(Object.values(evo.evolves_to).pop().species.name === pokemon.name){
+      } else if (
+        Object.values(evo.evolves_to).pop().species.name === pokemon.name
+      ) {
         next_evo_text = "-";
-      }else{
+      } else {
         next_evo = Object.values(evolution.chain.evolves_to).pop();
         next_evo_text = next_evo.species.name;
       }
-    }else{
-      if(evo.species.name === (pokemon.name)){
+    } else {
+      if (evo.species.name === pokemon.name) {
         next_evo_text = "-";
-      }else{
+      } else {
         next_evo = Object.values(evolution.chain.evolves_to).pop();
         next_evo_text = next_evo.species.name;
       }
     }
-    if(((species.evolves_from_species) === null)){
+    if (species.evolves_from_species === null) {
       prev_evo = "-";
-    }else{
+    } else {
       prev_evo = species.evolves_from_species;
     }
-  }else{
+  } else {
     next_evo_text = "-";
     prev_evo = "-";
   }
 
   //Gets Pokemon evolution image
   async function fetchNextEvoImg(id) {
-
-    const img_result = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`).then(res => res.json());
+    const img_result = await fetch(
+      `https://pokeapi.co/api/v2/pokemon/${id}`
+    ).then((res) => res.json());
     SetEvol_img(img_result.sprites.front_default);
   }
   async function fetchPrevEvoImg(id) {
-
-    const img_result2 = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`).then(res2 => res2.json());
+    const img_result2 = await fetch(
+      `https://pokeapi.co/api/v2/pokemon/${id}`
+    ).then((res2) => res2.json());
     SetPrevEvol_img(img_result2.sprites.front_default);
   }
-  
+
   function loadNextPage() {
     let url = window.location.href.toString();
-    let url2 = url.substr(0,url.indexOf("Detail"));
-    window.location.assign(url2+'Detail/'+next_evo_text);
+    let url2 = url.substr(0, url.indexOf("Detail"));
+    window.location.assign(url2 + "Detail/" + next_evo_text);
   }
 
   function loadPrevPage() {
     let url = window.location.href.toString();
-    let url2 = url.substr(0,url.indexOf("Detail"));
-    window.location.assign(url2+'Detail/'+prev_evo.name);
+    let url2 = url.substr(0, url.indexOf("Detail"));
+    window.location.assign(url2 + "Detail/" + prev_evo.name);
   }
 
   fetchNextEvoImg(next_evo_text);
-  fetchPrevEvoImg(prev_evo.name)
+  fetchPrevEvoImg(prev_evo.name);
+
+  function loadPrevEvolution() {
+    if (prev_evo.name == null) {
+      return <p>None</p>;
+    } else {
+      return (
+        <Link to={`/Detail/${prev_evo.name}`} onClick={loadPrevPage}>
+          <img src={prev_evol_img} alt="not loading" />
+          <p>{prev_evo.name}</p>
+        </Link>
+      );
+    }
+  }
+  function loadNextEvolution() {
+    if (next_evo_text === "-") {
+      return <p>None</p>;
+    } else {
+      return (
+        <Link to={`/Detail/${next_evo_text}`} onClick={loadNextPage}>
+          <img src={evol_img} alt="not loading" />
+          <p>{next_evo_text}</p>
+        </Link>
+      );
+    }
+  }
+
   return (
     <>
-      <Navbar1/>
+      <Navbar1 />
       <div className="parent">
         <div className="div1">
-
           <img
-              className={"sprite"}
-              src={imgLink}
-              alt="<    Image could not be loaded    >"
+            className={"sprite"}
+            src={imgLink}
+            alt="<    could not be loaded    >"
           />
-
         </div>
         <div className="div2">
           <a id={"bold_words"}>National-ID: #</a>
@@ -147,19 +175,11 @@ function Detail(props) {
           <br />
           <a id={"bold_words"}>Name: </a>
           {pokemon.name}
-          <p>
-            {flavor.flavor_text}
-          </p>
+          <p>{flavor.flavor_text}</p>
           <p id={"bold_words"}>Previous evolutions: </p>
-          <Link to={`/Detail/${prev_evo.name}`} onClick={loadPrevPage}>
-            <img src={prev_evol_img} alt="" />
-            <p>{prev_evo.name}</p>
-          </Link>
+          {loadPrevEvolution()}
           <p id={"bold_words"}>Next evolutions: </p>
-          <Link to={`/Detail/${next_evo_text}`} onClick={loadNextPage}>
-            <img src={evol_img} alt="" />
-            <p>{next_evo_text}</p>
-          </Link>
+          {loadNextEvolution()}
         </div>
         <div className="div3">
           <Card
@@ -170,7 +190,7 @@ function Detail(props) {
           />
         </div>
       </div>
-      </>
+    </>
   );
 }
 
